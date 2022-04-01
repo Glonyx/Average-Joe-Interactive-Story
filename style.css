@@ -1,0 +1,8 @@
+.title {
+display: flex;
+flex-direction: column;
+}
+
+h1 {
+    font-size: 42px;
+}
