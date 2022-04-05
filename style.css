@@ -1,8 +1,71 @@
+html {
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+
+}
+body{
+    background-color: #F5E8D1;
+}
 .title {
 display: flex;
-flex-direction: column;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-between;
+background-color: #6D8AA8;
 }
 
-h1 {
+.title h1 {
     font-size: 42px;
+    margin-left: 10%;
+    color: #D0E2F5;
+    font-weight: 600;
+    font-style: italic;
 }
+.title h2 {
+color: #D0E2F5;
+margin: 45px;
+}
+.textArea h2{
+    margin-left: 25%;
+    margin-right: 25%;
+    line-height:2em;
+    margin-top: 150px;
+    font-size: 27px;
+
+}
+.buttons{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: space-evenly;
+    margin-top: 150px;
+}
+.pushable{
+
+    border: none;
+    border-radius: 5px;
+    background:rgb(31, 30, 30);
+    color:antiquewhite;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: 15px;
+
+}
+.pushable {
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+  .front {
+    display: block;
+    padding: 35px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: #6D8AA8;
+    color: white;
+    transform: translateY(-6px);
+  }
+  
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
