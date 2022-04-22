@@ -13,6 +13,9 @@ window.onload = function () {
             text: `As you step through the glistening portal you are swept into a darkened room. On the walls there are torches lighting the mossy walls of the room. On the sides of the room there seems to be a couple of mysterious portals of fluctuating light. At each side of the room there is what seems to be a dark figure. As they step closer to you, you realize what they truly are… You are met with three burly and strong hog riders from the hit game clash of clans.  They start to walk closer to you with a terrible glare in the piggy's eye. They raise their hammers and charge at you. You only have seconds to think of what to do.`,
             choice: [[`stealHog`, `Attempt to Steal a Hog`], [`tryDodge`, `Try To Dodge Them`], [`askHog`, `Ask to be a Hog Rider`]],
         }
+
+        
+
     }
     var storyList = ["opener"];
     var button1 = document.querySelector('b1')
