@@ -39,33 +39,22 @@ margin: 45px;
     justify-content: space-evenly;
     margin-top: 100px;
 }
-.pushable{
 
-    border: none;
-    border-radius: 5px;
-    background:rgb(31, 30, 30);
-    color:antiquewhite;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-    font-size: 15px;
-
-}
-.pushable {
-    border: none;
-    border-radius: 12px;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
-  }
-  .front {
+  button {
     display: block;
     padding: 35px 42px;
     border-radius: 12px;
     font-size: 1.25rem;
     background: #6D8AA8;
     color: white;
-    transform: translateY(-6px);
+border-color: grey;
+cursor:pointer;
   }
   
-  .pushable:active .front {
-    transform: translateY(-2px);
-  }
+.restart {
+    background: red;
+    padding: 15px 22px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
