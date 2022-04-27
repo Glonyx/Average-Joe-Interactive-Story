@@ -42,7 +42,7 @@ margin: 45px;
 
   button {
     display: block;
-    padding: 35px 42px;
+    padding: 25px 15px;
     border-radius: 12px;
     font-size: 1.25rem;
     background: #6D8AA8;
@@ -57,4 +57,32 @@ cursor:pointer;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.myChoices{
+text-align: center;
+    font-size: 18px;
+    line-height: 2;
+}
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    font-style: italic;
+}
+.flexArea
+{    display:flex;
+    flex-direction: row;
+    flex-wrap:nowrap;}
+
+.appSec{
+    width:75%;
+    border-bottom: 15px solid #6D8AA8;
+}
+.choiceArea {
+    width:25%;
+    border-left: 15px solid #6D8AA8;
+    border-bottom: 15px solid #6D8AA8;
 }
