@@ -2,6 +2,11 @@
 html {
     font-family: "Neucha", sans-serif;
 
+
+
+
+
+
 }
 body{
     background-image:url('IMG/pexels-pixabay-235985.jpg');
@@ -13,6 +18,7 @@ flex-direction: row;
 flex-wrap: nowrap;
 justify-content: space-between;
 background-color: rgb(0, 0, 0, .5);
+align-items: flex-end;
 }
 
 header{
@@ -37,15 +43,21 @@ header{
 color: antiquewhite;
 margin: 45px;
 }
+
+.title h3 {
+font-size: 15px;
+color: red;
+cursor: pointer;
+    }
+
 .textArea {
     margin-left: 10%;
     margin-right: 10%;
     line-height:2em;
-    margin-top: 50px;
+    margin-top: 75px;
     font-size: 25px;
 
 }
-
 
 /* Paper buttons css by PaperCSS */
 button { 
@@ -102,17 +114,7 @@ button:focus {
     margin-top: 100px;
 }
 
-  /* button {
-    display: block;
-    padding: 25px 15px;
-    border-radius: 12px;
-    font-size: 1.25rem;
-    background: #6D8AA8;
-    color: white;
-border-color: transparent;
-cursor:pointer;
-box-shadow: 5px 5px 10px 2px rgba(0,0,0,.4);
-  } */
+
   
 .restart {
     background: red;
@@ -145,6 +147,8 @@ h3 {
 
 .appSec{
     width:85%;
+    height: 1500px;
+    
 }
 .choiceArea {
     width:15%;
@@ -152,7 +156,7 @@ h3 {
     padding: 20px;
     position: relative;
     box-shadow: 5px 20px 10px 2px rgba(0,0,0,.4);
-    margin-top: 50px;
+    margin-top: 75px;
     margin-right: 30px;
     height: 650px;
 }
@@ -188,6 +192,108 @@ h3 {
     background-size: 40%;
     
   }
+
+body footer{
+    background-color: rgb(0, 0, 0, .5);
+    color: antiquewhite;
+    padding-left: 20px;
+    padding-top: 5px;
+    position: absolute; right: 0;
+    position: absolute; left: 0;
+}
+
+.footy H4 {
+    font-size: 30px;
+}
+
+.footy p {
+    font-size: 20px;
+}
+
+.footy a {
+    text-decoration: none;
+        color: red;
+}
+
+.footy a:hover {
+    text-decoration: none;
+    color: royalblue;
+}
+
+ @media (max-width: 1150px){
+.textArea {
+    font-size: 20px;
+}
+    .title h1 {
+        font-size: 32px;
+        margin-left: 5%;
+        margin-right: 5%;
+
+    }
+    .title h2 {
+
+    margin: 35px;
+    }
+    
+    .title h3 {
+    font-size: 10px;
+        }
+
+
+ }
+
+ @media (max-width: 700px){
+    .textArea {
+        font-size: 15px;
+
+        max-width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+        .title h1 {
+            font-size: 25px;
+            margin-left: 5%;
+            margin-right: 5%;
+    
+        }
+        .title h2 {
+            font-size: 15px;
+    
+        }
+        #titleText {
+display:none
+        }
+        
+        .title h3 {
+        font-size: 10px;
+        margin-left: 25%;
+            }
+    
+            .appSec{
+                width:95%;
+                height: auto;
+
+
+position: relative;
+     }
+     .flexArea
+{
+    flex-direction: column;
+    flex-wrap:wrap;
+    margin-top:75px;
+}
+.choiceArea {
+    width:85%;
+
+margin-left: auto;
+margin-right: auto;
+
+    height: 650px;
+    margin-bottom: 150px;
+}
+
+
+    }
 
 
 

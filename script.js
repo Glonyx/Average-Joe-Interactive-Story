@@ -1,7 +1,7 @@
 window.onload = function () {
     var myStory = {
-        // holds story text and choices
-        opener: {
+        // holds story text and choices. Ending pathways defined by a blank choice proerty. 
+        starter: {
             text: `All your life, you lived in dullness and settled for the most comfortable option. You work a nine-to-five corporate job making enough to get by a year, living in a one-bedroom studio with no furniture other than a futon. You’ve decided it’s time for a change, and you go outside for a hike around the very mundane, stale, and boring town of Mungville, where everyone lives the same boring life, seeking only comfort in what is attainable. As you are walking, you end up witnessing a glowing dark portal with an odd heat coming off of its exterior. What do you do?`,
             choice: [["goPortal", "Go into Portal"], ["goHome", "Go Home"], ["continueWalk", "Continue your walk"]],
         },
@@ -282,64 +282,69 @@ window.onload = function () {
 
     }
 
-    let storyList = ["opener"];
-    storyBuilder(myStory.opener.text)
-    var restart = document.getElementById("restart");
+    let storyList = ["starter"];
+    storyBuilder(myStory.starter.text) //Builds Story when page is loaded based on starter text in mystory variable
+    var restart = document.getElementById("restart"); 
 
 
     function buttonBuilder(btnText, choice) {
         let button = document.createElement("button"); //creates button
-        console.log("buttons created")
+        console.log("buttons created") //Debugging Console log to make sure function has ran
         button.innerHTML = btnText; //Sets button Text on all buttons
-        buttonArea.appendChild(button);
+        buttonArea.appendChild(button); //Appends the button inter button Area
 
 
-        button.addEventListener("click", function () {
-            storyList.push(choice);
-            console.log("Your Choice: " + choice)
-            choiceBuilder();
+        button.addEventListener("click", function () { //Waits for a button to be clicked within the buttonArea
+            storyList.push(choice); //Pushes choice on the respective button to the sotry list which can be seen on the left side of the UI
+            console.log("Your Choice: " + choice) //Console.logs choice to ensure this part of the function has completed. 
+            choiceBuilder(); //Runs choice Builder function which takes the Choice and makes it into the story List that you see on the side of your screen
             console.log(storyList) //logs choice for debugging in console
             storyBuilder(); //runs create story which alters page. 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            console.log("button clicked")
+            window.scrollTo({ top: 0, behavior: 'smooth' }); //simple function to scroll smoothly to the top of the screen when a button has been clicked if the text is ever too long. 
+            console.log("button clicked") 
         });
     }
 
-    function choiceBuilder() {
+
+
+    function choiceBuilder() { //Function that builds html text shown on right side of UI.
         console.log("ChoiceBuilder Ran")
-        var prevHTML = ""
-        for (var i = 1; i < storyList.length; i++) {
+        var prevHTML = "" //Builds Variable to be used to hold previous HTML in the tag
+        for (var i = 1; i < storyList.length; i++) { //Function that Builds each item in the html for every loop. Takes old html and adds it on every single time it builds it. Basically takes a layer and stacks it on top every time. 
             myChoices.innerHTML = (prevHTML + '<br>' + i + " - " + storyList[i])
             prevHTML = myChoices.innerHTML;
-            console.log("CHOICE BUILDER TEXT: " + myChoices.innerHTML)
+            console.log("CHOICE BUILDER TEXT: " + myChoices.innerHTML) //Displays in console.log the current text and what it should view. 
         }
         console.log(prevHTML)
     }
 
-    function storyPlacer(text) {
+    function storyPlacer(text) { //Places story into the innerHTML of the text area. Text var represents the new corresponding text found by the loop in the storyBuilder Function
         textArea.innerHTML = text;
         console.log("Text Built: storyPlacer Complete");
     }
 
-    function storyBuilder(text) {
-        let currentPage = storyList[storyList.length - 1];
+    function storyBuilder(text) { 
+        let currentPage = storyList[storyList.length - 1]; 
         textArea.innerHTML = "";//deletes text area
         buttonArea.innerHTML = "";//deletes button area div
-        for (let num of storyList) {
+        for (let num of storyList) { //Finds the text based on the num defined by the story list and then runs the story placer with the location of that next peice of text. 
             storyPlacer(myStory[num].text)
         }
-        for (let num of myStory[currentPage].choice) {
+        for (let num of myStory[currentPage].choice) { //Same thing as the function above but it takes the index of the two items in each button array and chooses which one is the back-end handle and which one is on the front-end on the button.
             buttonBuilder(num[1], num[0]);
         }
         console.log("storyBuilder Complete");
     }
-    var restart = document.getElementById("restart")
-    restart.addEventListener("click", function () {
+    var restart = document.getElementById("restart") //Defines retart button
+    restart.addEventListener("click", function () { //On click it will restart the page and reset the story list. 
         location.reload();
-        storyList = ["opener"];
+        storyList = ["starter"];
         console.log("restarted")
     });
 
-
+    creditScroll.addEventListener("click", function () { 
+        console.log("Scrolling")
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+    });
 
 }
